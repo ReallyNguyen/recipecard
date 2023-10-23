@@ -1,5 +1,5 @@
 import { Box, VStack, Link, Heading, Image } from "@gluestack-ui/themed";
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function Recipe() {
     return (
@@ -23,41 +23,20 @@ export default function Recipe() {
                 },
             }}
         >
-            <Box>
+            <Box style={{ position: 'relative' }}>
                 <Image
-                    h={150}
+                    h={195}
+                    w={161}
                     source={{
                         uri: "https://images.unsplash.com/photo-1549888834-3ec93abae044?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80",
                     }}
+                    resizeMode="cover"
+                    alt="image"
                 />
+                <View style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: 57, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center' }}>
+                    <Text style={{ color: 'white', marginLeft: 10, fontSize: 16, fontWeight: "bold" }}>Testing</Text>
+                </View>
             </Box>
-            <VStack px="$6" pt="$4" pb="$6">
-                <Text _dark={{ color: "$textLight200" }} fontSize="$sm" my="$1.5">
-                    August 16, 2023
-                </Text>
-                <Heading _dark={{ color: "$textLight200" }} size="sm">
-                    Fresh Orange
-                </Heading>
-                <Text my="$1.5" _dark={{ color: "$textLight200" }} fontSize="$xs">
-                    Oranges are a great source of vitamin C, which is essential for a
-                    healthy immune system. Oranges are a great source of vitamin C, which
-                    is important for maintaining a healthy immune system.
-                </Text>
-                <Text
-                    _dark={{ color: "$textLight200" }}
-                    my="$1.5"
-                    fontSize="$xs"
-                    isTruncated="true"
-                >
-                    Vitamin C also helps with the absorption of iron and the production of
-                    collagen, which supports healthy skin, teeth, and bones.
-                </Text>
-                <Link href="https://gluestack.io/" isExternal>
-                    <Text fontSize="$sm" color="$pink600">
-                        Find out more
-                    </Text>
-                </Link>
-            </VStack>
         </Box>
     );
 }

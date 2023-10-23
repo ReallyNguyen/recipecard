@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Recipe from '../components/recipe';
+import HorizontalRecipe from '../components/horizontalrecipe';
 
 export default function Home({ navigation }) {
     return (
@@ -12,6 +13,7 @@ export default function Home({ navigation }) {
                 onPress={() => navigation.push('About')}
             />
             <Recipe />
+            <HorizontalRecipe />
         </View>
     );
 }
